@@ -16,7 +16,6 @@ body {
     display: grid;
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: 10vh;
-    text-align: center;
 }
 
 #header h1{
@@ -29,11 +28,21 @@ body {
 
 }
 
-#header img{
+#Finn_Jake{
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
     max-height: 8vh;
     margin: 1vh 0% 0vh 1vh;
+}
+
+#Marcy_Prubs{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    max-height: 8vh;
+    margin: 1vh 1vh 0vh 0;
+    justify-self: end;
 }
