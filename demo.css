@@ -1,0 +1,39 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hubballi&display=swap');
+
+body {
+    display: grid;
+    grid-template-rows: 10vh 70vh 20vh;
+    margin: 0;
+}
+
+#header {
+    text-align: center;
+    background: green;
+    font-family: Hubballi;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10vh;
+    text-align: center;
+}
+
+#header h1{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    max-height: 5vh;
+    font-size: 5vh;
+
+}
+
+#header img{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    max-height: 8vh;
+    margin: 1vh 0% 0vh 1vh;
+}
