@@ -21,29 +21,53 @@ function renderDisplayDiv(character){
     const infoList = document.createElement("ul")
     const fullName = document.createElement("li")
     const species = document.createElement("li")
-    const quotes = document.createElement("ul")
+    const quotes = document.createElement("li")
+    const quotesList = document.createElement("ul")
 
     character.quotes.forEach(quote =>{
         const newQuote = document.createElement("li")
         newQuote.textContent = quote
-        quotes.append(newQuote)
+        quotesList.append(newQuote)
     })
 
+    displayDiv.style.gridRow = "1 / span 1"
+    displayDiv.style.height = "50vh"
     displayDiv.style.backgroundColor = "white";
     displayDiv.style.display = "grid";
-    displayDiv.style.gridTemplateColumns = "30% 80%"
+    displayDiv.style.gridTemplateColumns = "15vh calc(100% - 15vh)"
+    displayDiv.style.griedTemplateRows = "15vh 35vh"
 
     characterImg.src = character.sprite
-    characterImg.style.minHeight = "100%";
-    characterImg.style.backgroundColor = "blue";
+    // characterImg.style.width = "100%";
+    characterImg.style.height= "15vh"
+    // characterImg.style.backgroundColor = "blue";
     characterImg.style.gridColumn = "1 / span 1";
 
-    infoDiv.style.gridColum = "2 / span 1"
+    infoDiv.style.gridColumn = "1 / span 2"
+    infoDiv.style.gridRow = "2 / span 1"
+    infoDiv.style.width = "100%"
+    infoDiv.style.height = "50vh"
+    infoDiv.style.overflow = "auto"
+    // infoDiv.style.backgroundColor = "hsl(120, 20%, 90%)";
+
+    name.textContent = character.displayName
+    name.style.textAlign = "center"
+    name.style.fontSize = "6vh"
+
+    infoList.style.fontSize = "3vh"
+
+    fullName.textContent = `Full Name: ${character.fullName}`
+
+    species.textContent = `Species: ${character.species}`
+
+    quotes.textContent ="Quotes:"
+    
+    quotesList.style.maxWidth = "100%"
    
     // displayDiv.style.gridRow = "1 / span 1";
-    infoDiv.append(quotes)
-    displayDiv.append(characterImg)
-    displayDiv.append(infoDiv)
+    infoList.append(fullName, species, quotes, quotesList)
+    infoDiv.append(infoList)
+    displayDiv.append(characterImg, name, infoDiv)
     display.append(displayDiv)
 }
 

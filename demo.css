@@ -5,12 +5,13 @@ body {
     display: grid;
     grid-template-rows: 10vh 70vh 20vh;
     margin: 0;
+    font-family: Hubballi;
 }
 
 #header {
     text-align: center;
     background: green;
-    font-family: Hubballi;
+
     grid-row-start: 1;
     grid-row-end: 2;
     display: grid;
