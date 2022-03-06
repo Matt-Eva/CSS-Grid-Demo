@@ -46,3 +46,21 @@ body {
     margin: 1vh 1vh 0vh 0;
     justify-self: end;
 }
+
+#display {
+    grid-row: 2 / span 1;
+    background-color: hsl(120, 50%, 50%);
+    display: grid;
+    grid-template-rows: 50vh;
+    /* align-items: center; */
+    padding: 10vh 10% 10vh 10%;
+}
+
+#interaction{
+    grid-row: 3 / span 1;
+    background-color: hsl(120, 50%, 30%);
+    display: grid;
+    grid-template-rows: 20vh;
+    overflow: auto;
+    width: 100%;
+}
