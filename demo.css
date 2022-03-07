@@ -36,6 +36,7 @@ body {
     grid-row-end: 2;
     max-height: 8vh;
     margin: 1vh 0% 0vh 1vh;
+    cursor: pointer;
 }
 
 #Marcy_Prubs{
@@ -46,6 +47,7 @@ body {
     max-height: 8vh;
     margin: 1vh 1vh 0vh 0;
     justify-self: end;
+    cursor: pointer;
 }
 
 #display {

@@ -1,7 +1,6 @@
 const display = document.getElementById("display")
 const interaction = document.getElementById("interaction")
 
-
 fetch("https://adventure-time-api.herokuapp.com/api/v1/characters")
 .then(r => r.json())
 .then(data => {
@@ -34,25 +33,35 @@ function renderDisplayDiv(character){
     displayDiv.style.height = "50vh"
     displayDiv.style.backgroundColor = "white";
     displayDiv.style.display = "grid";
-    displayDiv.style.gridTemplateColumns = "15vh calc(100% - 15vh)"
+    displayDiv.style.gridTemplateColumns = `17.7vh calc(100% - 17.7vh)`
     displayDiv.style.griedTemplateRows = "15vh 35vh"
 
+    
+
     characterImg.src = character.sprite
-    // characterImg.style.width = "100%";
     characterImg.style.height= "15vh"
-    // characterImg.style.backgroundColor = "blue";
-    characterImg.style.gridColumn = "1 / span 1";
+    characterImg.style.gridColumn = "1 / span 1"
+    characterImg.style.gridRow = '1 / span 1'
+    characterImg.style.backgroundColor = "hsl(200, 100%, 70%)"
+
+    console.log(characterImg)
 
     infoDiv.style.gridColumn = "1 / span 2"
     infoDiv.style.gridRow = "2 / span 1"
     infoDiv.style.width = "100%"
-    infoDiv.style.height = "50vh"
+    infoDiv.style.height = "35vh"
     infoDiv.style.overflow = "auto"
+    infoDiv.style.backgroundColor= "hsl(200, 100%, 90%)"
     // infoDiv.style.backgroundColor = "hsl(120, 20%, 90%)";
 
     name.textContent = character.displayName
+    name.style.margin = "0px"
+    name.style.padding = "5vh 0px 0px 0px"
     name.style.textAlign = "center"
     name.style.fontSize = "6vh"
+    name.style.gridRow = "1 / span 1"
+    name.style.gridColumn = "2 / span 1"
+    name.style.backgroundColor = "hsl(200, 100%, 80%)"
 
     infoList.style.fontSize = "3vh"
 
