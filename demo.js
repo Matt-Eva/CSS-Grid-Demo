@@ -13,6 +13,7 @@ fetch("https://adventure-time-api.herokuapp.com/api/v1/characters")
 
 function renderDisplayDiv(character){
     display.removeChild(display.firstChild)
+
     const displayDiv = document.createElement("div")
     const characterImg = document.createElement("img")
     const infoDiv = document.createElement("div")
@@ -29,22 +30,29 @@ function renderDisplayDiv(character){
         quotesList.append(newQuote)
     })
 
+    
     displayDiv.style.gridRow = "1 / span 1"
     displayDiv.style.height = "50vh"
-    displayDiv.style.backgroundColor = "white";
     displayDiv.style.display = "grid";
     displayDiv.style.gridTemplateColumns = `17.7vh calc(100% - 17.7vh)`
     displayDiv.style.griedTemplateRows = "15vh 35vh"
-
+    displayDiv.style.backgroundColor = "white";
     
-
+    
     characterImg.src = character.sprite
-    characterImg.style.height= "15vh"
     characterImg.style.gridColumn = "1 / span 1"
     characterImg.style.gridRow = '1 / span 1'
+    characterImg.style.height= "15vh"
     characterImg.style.backgroundColor = "hsl(200, 100%, 70%)"
 
-    console.log(characterImg)
+    name.textContent = character.displayName
+    name.style.gridRow = "1 / span 1"
+    name.style.gridColumn = "2 / span 1"
+    name.style.margin = "0px"
+    name.style.padding = "5vh 0px 0px 0px"
+    name.style.textAlign = "center"
+    name.style.fontSize = "6vh"
+    name.style.backgroundColor = "hsl(200, 100%, 80%)"
 
     infoDiv.style.gridColumn = "1 / span 2"
     infoDiv.style.gridRow = "2 / span 1"
@@ -52,16 +60,6 @@ function renderDisplayDiv(character){
     infoDiv.style.height = "35vh"
     infoDiv.style.overflow = "auto"
     infoDiv.style.backgroundColor= "hsl(200, 100%, 90%)"
-    // infoDiv.style.backgroundColor = "hsl(120, 20%, 90%)";
-
-    name.textContent = character.displayName
-    name.style.margin = "0px"
-    name.style.padding = "5vh 0px 0px 0px"
-    name.style.textAlign = "center"
-    name.style.fontSize = "6vh"
-    name.style.gridRow = "1 / span 1"
-    name.style.gridColumn = "2 / span 1"
-    name.style.backgroundColor = "hsl(200, 100%, 80%)"
 
     infoList.style.fontSize = "3vh"
 
@@ -73,7 +71,6 @@ function renderDisplayDiv(character){
     
     quotesList.style.maxWidth = "100%"
    
-    // displayDiv.style.gridRow = "1 / span 1";
     infoList.append(fullName, species, quotes, quotesList)
     infoDiv.append(infoList)
     displayDiv.append(characterImg, name, infoDiv)
@@ -92,6 +89,7 @@ function renderInteractionDiv(character){
     characterOption.addEventListener("click", ()=>{
         renderDisplayDiv(character)
     })
+
     characterOption.append(thumbnail)
     interaction.append(characterOption)
 }
