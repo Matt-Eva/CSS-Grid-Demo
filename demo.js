@@ -1,13 +1,25 @@
 const display = document.getElementById("display")
 const interaction = document.getElementById("interaction")
 
+const info = fetch("https://data.cityofnewyork.us/api/views/p94q-8hxh")
+
+fetch("https://data.cityofnewyork.us/api/views/p94q-8hxh")
+.then(r => r.json())
+.then(console.log)
+
+function getJSON(url){
+    return fetch(url).then(r => r.json())
+}
+
+getJSON("https://data.cityofnewyork.us/api/views/p94q-8hxh").then(console.log)
+
 fetch("https://adventure-time-api.herokuapp.com/api/v1/characters")
 .then(r => r.json())
 .then(data => {
     console.log(data)
     renderDisplayDiv(data[0])
-    data.forEach(character =>{
-        renderInteractionDiv(character)
+    data.forEach(characterObject =>{
+        renderInteractionDiv(characterObject)
     })
 })
 
